@@ -240,7 +240,11 @@ char *
 SBCanonicalizePath(const char* mypath)
 {	
 	DBG("SBCanonicalizePath? %s\n", mypath);
+#ifdef __FreeBSD__
+	char *p = realpath(mypath, NULL);	
+#else
 	char *p = canonicalize_file_name(mypath);	
+#endif
 	DBG("SBCanonicalizePath! %s-> %s\n", mypath, s.c_str());
 	return p;
 }
@@ -256,7 +260,7 @@ SBGetAppRoot(const char *appId, char *buffer, int bufferLength)
 	
 	strncpy(buffer, appPrivatePathPrefix, n);
 	strncpy(buffer+n, appId, m);
-	buffer[n+m] = NULL;
+	buffer[n+m] = '\0';
 	
 	return c_true;
 }
@@ -272,7 +276,7 @@ SBGetAppScratch(const char *appId, char *buffer, int bufferLength)
 	
 	strncpy(buffer, appScratchPathPrefix, n);
 	strncpy(buffer+n, appId, m);
-	buffer[n+m] = NULL;
+	buffer[n+m] = '\0';
 	
 	return c_true;
 }

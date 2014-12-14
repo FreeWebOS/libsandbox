@@ -16,8 +16,8 @@ Below are the tools and libraries (and their minimum versions) required to build
 - make (any version)
 - openwebos/cmake-modules-webos 1.0.0 RC2
 
-How to Build on Linux
-=====================
+How to Build on Linux or FreeBSD
+================================
 
 ## Building
 

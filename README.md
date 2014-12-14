@@ -12,7 +12,7 @@ Dependencies
 Below are the tools and libraries (and their minimum versions) required to build libsandbox:
 
 - cmake (version required by openwebos/cmake-modules-webos)
-- g++ 4.6.3
+- g++ 4.6.3 or Clang
 - make (any version)
 - openwebos/cmake-modules-webos 1.0.0 RC2
 
